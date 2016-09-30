@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
   # update a task and linke to a result page
-  get 'tasks/:id/update' => 'tasks#update', as: 'update'
+  patch 'tasks/:id/update' => 'tasks#update', as: 'update'
 
   # delete a task and link to a result page
-  get 'tasks/destroy' => 'posts#destroy', as: 'delete'
+  delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'delete'
 
 
 end

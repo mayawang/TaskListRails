@@ -1,2 +1,8 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h3> Title: <%=@task[:title] %> </h3>
+<p> Description: <%=@task[:description] %> </p>
+<p> Completion status:<%=@task[:is_complete] %> </p>
+<p> Completion time: <%=@task[:complete_at] %> </p>
+
+
+<p><%= button_to( "Edit", edit_path(@task[:id]) ) %></p>
+<p><%= button_to "Delete", { action: "destroy", id: @task[:id]}, method: :destory, data: {confirm:"Are you sure?"} %></p>
