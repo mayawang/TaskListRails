@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id].to_i)
-    
+
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
     @task.is_complete = params[:task][:is_complete]
@@ -38,4 +38,9 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.destroy(params[:id].to_i)
   end
+
+  private
+   def post_params
+     params.require(:post).permit(:title, :author, :body)
+   end
 end
