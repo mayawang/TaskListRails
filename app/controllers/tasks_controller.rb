@@ -39,8 +39,8 @@ class TasksController < ApplicationController
     @task = Task.destroy(params[:id].to_i)
   end
 
-  private
-   def post_params
-     params.require(:post).permit(:title, :author, :body)
-   end
+#   private
+#    def post_params
+#      params.require(:post).permit(:title, :author, :body)
+#    end
 end

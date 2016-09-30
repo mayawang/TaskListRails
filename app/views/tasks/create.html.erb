@@ -1,2 +1,7 @@
-<h1>Tasks#create</h1>
-<p>Find me in app/views/tasks/create.html.erb</p>
+<article>
+  <p><%= @params %></p>
+  <h1><%= @task.title %></h1>
+  <h3><%= @task.description %></h3>
+  <p><%= @task.is_complete %></p>
+  <p><%= @task.complete_at%></p>
+</article>
