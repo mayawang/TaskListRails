@@ -7,7 +7,6 @@ class TasksController < ApplicationController
     @params = params
     @task = Task.new
     @task.title = params[:task][:title]
-
     @task.description = params[:task][:description]
 
     @task.is_complete = (params[:task][:is_complete] == "1")

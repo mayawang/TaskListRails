@@ -1,23 +1,6 @@
 <h1>Add a New Task</h1>
 
 <%= form_for @task, url: create_path do |f| %>
-<ul>
-  <li>
-    <%= f.label :title  %>
-    <%= f.text_field :title %>
-  </li>
-
-  <li>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </li>
-
-  <li>
-    <%= f.label :completed? %>
-    <%= f.check_box :is_complete %>
-  </li>
-</ul>
-
-
-<%= f.submit :Add%>
+  <%= render partial: 'form', locals: {:f => f} %>
+  <%= f.submit "Add"%>
 <% end %>
