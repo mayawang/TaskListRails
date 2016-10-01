@@ -1,2 +1,25 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Edit a Task</h1>
+
+<%= form_for @task, url: update_path do |f| %>
+<ul>
+  <li>
+    <%= f.label :title  %>
+    <%= f.text_field :title %>
+  </li>
+
+  <li>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </li>
+
+  <li>
+    <%= f.label :is_complete %>
+    <%= f.check_box :is_complete %>
+  </li>
+
+
+  <li>Completion time: <%=@task[:complete_at] %></li>
+</ul>
+
+<%= f.submit %>
+<% end %>

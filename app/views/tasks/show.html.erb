@@ -4,5 +4,5 @@
 <p> Completion time: <%=@task[:complete_at] %> </p>
 
 
-<p><%= button_to( "Edit", edit_path(@task[:id]) ) %></p>
-<p><%= button_to "Delete", { action: "destroy", id: @task[:id]}, method: :destory, data: {confirm:"Are you sure?"} %></p>
+<p><%= button_to "Edit", edit_path(@task[:id]), method: :get %></p>
+<p><%= button_to "Delete", { action: "destroy", id: @task[:id]}, method: :delete, data: {confirm:"Are you sure?"} %></p>
