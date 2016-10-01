@@ -13,13 +13,14 @@
   </li>
 
   <li>
-    <%= f.label :is_complete %>
+    <%= f.label :completed? %>
     <%= f.check_box :is_complete %>
   </li>
 
 
-  <li>Completion time: <%=@task[:complete_at] %></li>
+  <li>Completed at: <%=@task [:complete_at] %></li>
 </ul>
 
-<%= f.submit %>
+<%= f.submit :Update %>
+
 <% end %>

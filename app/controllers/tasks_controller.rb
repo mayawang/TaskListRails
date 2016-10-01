@@ -7,10 +7,15 @@ class TasksController < ApplicationController
     @params = params
     @task = Task.new
     @task.title = params[:task][:title]
+
     @task.description = params[:task][:description]
-    @task.is_complete = params[:task][:is_complete]
-    @task.complete_at = params[:task][:complete_at]
+
+    @task.is_complete = (params[:task][:is_complete] == "1")
+    puts "what is complete? #{params[:task][:is_complete]}"
+
     @task.save
+
+    redirect_to action: "index"
   end
 
   def show
@@ -19,6 +24,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+
   end
 
   def edit
@@ -30,17 +36,30 @@ class TasksController < ApplicationController
 
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
-    @task.is_complete = params[:task][:is_complete]
-    @task.complete_at = params[:task][:complete_at]
+
+    @task.is_complete = (params[:task][:is_complete] == "1")
+    puts "what is complete? #{params[:task][:is_complete]}"
+
     @task.save
+
+    redirect_to action: "index"
+  end
+
+  def complete
+    @task = Task.find(params[:id].to_i)
+    @task.is_complete = true
+    @task.save
+
+    redirect_to action: "index"
   end
 
   def destroy
     @task = Task.destroy(params[:id].to_i)
+    redirect_to action: "index"
   end
 
-#   private
-#    def post_params
-#      params.require(:post).permit(:title, :author, :body)
-#    end
+  private
+   def post_params
+     params.require(:task).permit(:title, :description)
+   end
 end

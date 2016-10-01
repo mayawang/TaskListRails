@@ -1,12 +1,20 @@
 <h1>Tasks List</h1>
-
-<li><%= link_to( "Home", index_path ) %></li>
-<li><%= link_to( "New Task", new_path ) %></li>
-
 <p>
   <% @tasks.each do |task| %>
   <ul>
-    <li><%= link_to( task.title, show_path(task.id) ) %></li>
+    <li>
+      <%= link_to task.title, show_path(task.id) %>
+      <% if task.is_complete == true %>
+        <%= "completed! #{task.complete_at}" %>
+      <% else %>
+        <%= button_to "completed!", { action: "complete", id: task.id }, method: :patch %>
+      <% end %>
+      <%= button_to "Delete", { action: "destroy", id: task.id }, method: :delete, data: {confirm:"Are you sure?"} %>
+    </li>
+
   </ul>
   <% end %>
+  <section>
+    <%= link_to( "Add new task", new_path ) %>
+  </section>
 </p>
