@@ -1,20 +1,43 @@
-<h1>Tasks List</h1>
-<p>
-  <% @tasks.each do |task| %>
-  <ul>
-    <li>
-      <%= link_to task.title, show_path(task.id) %>
-      <% if task.is_complete == true %>
-        <%= "completed! #{task.complete_at}" %>
-      <% else %>
-        <%= button_to "completed!", { action: "complete", id: task.id }, method: :patch %>
-      <% end %>
-      <%= button_to "Delete", { action: "destroy", id: task.id }, method: :delete, data: {confirm:"Are you sure?"} %>
-    </li>
-
-  </ul>
-  <% end %>
+<body>
   <section>
-    <%= link_to( "Add new task", new_path ) %>
+    <header>
+      <h1>Task List</h1>
+    </header>
+      <ul>
+      <% @tasks.each do |task| %>
+        <% if task.is_complete == true %>
+          <li>
+            <strike><%= link_to task.title, show_path(task.id) %></strike>
+          </li>
+
+          <div>
+            <li class="button">
+              <%= "Done! " %>
+            </li>
+            <li class="button">
+              <%= button_to "Delete", { action: "destroy", id: task.id }, method: :delete, data: {confirm:"Are you sure?"} %>
+            </li>
+          </div>
+            <!-- <%=task.complete_at%> -->
+          <% else %>
+            <li>
+              <%= link_to task.title, show_path(task.id) %>
+            </li>
+
+          <div>
+            <li class="button">
+              <%= button_to "Done!", { action: "complete", id: task.id }, method: :patch %>
+            </li>
+            <li class="button">
+              <%= button_to "Delete", { action: "destroy", id: task.id }, method: :delete, data: {confirm:"Are you sure?"} %>
+            </li>
+          </div>
+        <% end %>
+
+      <% end %>
+      </ul>
+      <div class="add">
+        <%= link_to( "+ Task", new_path ) %>
+      </div>
   </section>
-</p>
+</body>

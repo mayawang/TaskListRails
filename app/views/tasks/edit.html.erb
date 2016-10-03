@@ -1,5 +1,14 @@
-<h1>Edit a Task</h1>
-<%= form_for @task, url: update_path do |f| %>
-  <%= render partial: 'form', locals: {:f => f} %>
-  <%= f.submit 'Update' %>
-<% end %>
+
+<section>
+  <header>
+    <h1>Edit a Task</h1>
+  </header>
+
+  <%= form_for @task, url: update_path do |f| %>
+    <%= render partial: 'form', locals: {:f => f} %>
+    <div>
+      <%= f.submit 'Update' %>
+    <div>
+  <% end %>
+
+</section>

@@ -1,14 +1,25 @@
-<h3> Title: <%=@task[:title] %> </h3>
-<p> Description: <%=@task[:description] %> </p>
-<p>
-  Status:
-  <% if @task[:is_complete] %>
-    <%= "completed" %>
-  <% else %>
-    <%= "uncompleted" %>
-  <% end %>
-  at: <%=@task[:complete_at] %>
-</p>
+<section>
+  <header>
+    <h1> <%=@task[:title] %> </h1>
+  </header>
 
-<p><%= button_to "Edit", edit_path(@task[:id]), method: :get %></p>
-<p><%= button_to "Delete", { action: "destroy", id: @task.id }, method: :delete, data: {confirm:"Are you sure?"} %></p>
+  <p> <%=@task[:description] %> </p>
+  <p class="status">
+    Status:
+    <% if @task[:is_complete] %>
+      <%= "Done!" %>
+    <p class="status">
+      <%=@task[:complete_at] %>
+    </p>
+    <% else %>
+      <%= "Working on it." %>
+    <% end %>
+  </p>
+
+  <div>
+    <ul>
+      <li class="button"><%= button_to "Edit", edit_path(@task[:id]), method: :get %></li>
+      <li class="button"><%= button_to "Delete", { action: "destroy", id: @task.id }, method: :delete, data: {confirm:"Are you sure?"} %></li>
+    </ul>
+  </div>
+</section>
