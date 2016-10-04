@@ -15,6 +15,7 @@ class TasksController < ApplicationController
     @task.save
 
     redirect_to action: "index"
+    # @path = "update"
   end
 
   def show
