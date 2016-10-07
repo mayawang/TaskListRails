@@ -1,3 +1,39 @@
+# Reflection:
+## What went well:
+1.Rebuilt wave1-wave3 on Friday because all files lost;
+2.Used check-box for editing completion status;
+3.Designed Completed time logic in model to reflect task completion time;
+4.Added cross-through effect for completed task;
+5.Applied RESTful conventions to both views path and HTTP verb;
+6.Used render to DRY new and show views;
+7.Clean and minimalism UI/UX design.
+
+Making the completed time logic in model work with check-box and new task link, reflecting task completion time, is the most challenging and interesting part for me. I learnt a lot from completing it, especially understanding more when to put the time logic in model. 
+
+Adding cross-though effect is nice too.
+
+## What are you still working on understanding better:
+I only managed to adjust the **size** of description text_field. 
+I did not figure out a way to adjust text_field's **row and column** for better input experience, and really hope to know how to do so.
+
+Our trio team(Jessica, Leah and I) also agreed that it is difficult to manipulate the form_for form and button. I did not try to adjust the size of the button though. I feel frustration for the row and column of the form_for form.
+
+
+## What did your chair pair do differently:
+Leah changed the completion button to two-ways, which improved user experience a lot. I wasn't think about that other than using check_box. I did not use check_box because the requirement specified using button. It was great to do it this way.
+Jessica used great font called Kranky, emoji and Mission impossible theme making it very nice. 
+
+
+
+
+
+
+
+
+
+
+
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
