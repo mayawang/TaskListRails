@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   # return a HTML form for editing a new task
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  # update a task and linke to a result page
+  # update a task and link to a result page
   patch 'tasks/:id' => 'tasks#update', as: 'update'
 
   # set a task to completed state
