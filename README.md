@@ -1,4 +1,6 @@
-# Reflection:
+# Task List Rails ✅
+LIVE heroku app: https://tasks-done.herokuapp.com/
+
 ## What went well:
 1.Rebuilt wave1-wave3 on Friday because all files lost;
 2.Used check-box for editing completion status;
@@ -23,18 +25,10 @@ Our trio team(Jessica, Leah and I) also agreed that it is difficult to manipulat
 Leah changed the completion button to two-ways, which improved user experience a lot. I wasn't think about that other than using check_box. I did not use check_box because the requirement specified using button. It was great to do it this way.
 Jessica used great font called Kranky, emoji and Mission impossible theme making it very nice. 
 
+---
 
+# Project Guide
 
-
-
-
-
-
-
-
-
-
-# Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
 Tracking tasks in a web app will let us focus on following Rails conventions and learning how data flows through a Rails application.
