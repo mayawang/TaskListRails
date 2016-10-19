@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
   root to: 'tasks#index'
 
   get 'tasks' => 'tasks#index', as:'index'
@@ -25,5 +27,7 @@ Rails.application.routes.draw do
   # delete a task and link to a result page
   delete 'tasks/:id' => 'tasks#destroy', as: 'delete'
 
+  #resources :sessions, :only => [:create]
+  get 'auth/:provider/callback' => 'sessions#create'
 
 end

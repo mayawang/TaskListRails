@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'pg', group: :production
+# gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 group :development, :test do
@@ -37,8 +37,13 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', group: [:development, :test]
+  gem 'dotenv-rails'
+  gem 'better_errors'
 end
 
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'awesome_print'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
