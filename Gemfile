@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # for oAuth github Authentication
 gem "omniauth"
 gem "omniauth-github"
+gem "binding_of_caller"
 
 # its awesome!
 gem 'awesome_print'
