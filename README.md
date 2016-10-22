@@ -1,7 +1,7 @@
 # Task List Rails ✅
 LIVE heroku app: https://tasks-done.herokuapp.com/
 
-## What went well:
+### What went well:
 1.Rebuilt wave1-wave3 on Friday because all files lost;
 2.Used check-box for editing completion status;
 3.Designed Completed time logic in model to reflect task completion time;
@@ -14,14 +14,14 @@ Making the completed time logic in model work with check-box and new task link, 
 
 Adding cross-though effect is nice too.
 
-## What are you still working on understanding better:
+### What are you still working on understanding better:
 I only managed to adjust the **size** of description text_field. 
 I did not figure out a way to adjust text_field's **row and column** for better input experience, and really hope to know how to do so.
 
 Our trio team(Jessica, Leah and I) also agreed that it is difficult to manipulate the form_for form and button. I did not try to adjust the size of the button though. I feel frustration for the row and column of the form_for form.
 
 
-## What did your chair pair do differently:
+### What did your chair pair do differently:
 Leah changed the completion button to two-ways, which improved user experience a lot. I wasn't think about that other than using check_box. I did not use check_box because the requirement specified using button. It was great to do it this way.
 Jessica used great font called Kranky, emoji and Mission impossible theme making it very nice. 
 
