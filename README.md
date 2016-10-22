@@ -23,7 +23,7 @@ Our trio team(Jessica, Leah and I) also agreed that it is difficult to manipulat
 
 ### What did your chair pair do differently:
 Leah changed the completion button to two-ways, which improved user experience a lot. I wasn't think about that other than using check_box. I did not use check_box because the requirement specified using button. It was great to do it this way.
-Jessica used great font called Kranky, emoji and Mission impossible theme making it very nice. 
+Jessica used great font called Kranky, emoji and Mission impossible theme making it very pretty. 
 
 ---
 
