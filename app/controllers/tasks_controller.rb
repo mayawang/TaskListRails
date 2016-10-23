@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @tasks = Task.all
   end
@@ -62,5 +64,13 @@ class TasksController < ApplicationController
   private
    def post_params
      params.require(:task).permit(:title, :description)
+   end
+
+   def authenticate_user!
+     unless session[:user_id]
+       # not authenticated
+       # stop the request and redirect user to login page
+       redirect_to controller: "sessions", action: "index"
+     end
    end
 end
