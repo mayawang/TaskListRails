@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
 
   def is_complete=(value)
     if value
