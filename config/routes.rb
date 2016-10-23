@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'tasks#index'
 
-  get "/auth/:provider/callback" =>  "sessions#create"
-
   get 'tasks' => 'tasks#index', as:'index'
 
   # return a HTML form for adding a new task
@@ -27,5 +25,10 @@ Rails.application.routes.draw do
   # delete a task and link to a result page
   delete 'tasks/:id' => 'tasks#destroy', as: 'delete'
 
+
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/login" => "sessions#index"
+
+  delete "/logout" => "sessions#destroy", as: "sessions_destroy"
 
 end
