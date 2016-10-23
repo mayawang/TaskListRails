@@ -2,12 +2,14 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(:user_id => session[:user_id])
+
   end
 
   def create
     @params = params
     @task = Task.new
+    @task.user_id = session[:user_id]
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
 
@@ -23,19 +25,23 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id].to_i)
+    return render :status => :forbidden unless has_access?(@task)
   end
 
   def new
     @task = Task.new
-
+    @task.user_id = session[:user_id]
   end
 
   def edit
     @task = Task.find(params[:id].to_i)
+    return render :status => :forbidden unless has_access?(@task)
   end
 
   def update
     @task = Task.find(params[:id].to_i)
+
+    return render :status => :forbidden unless has_access?(@task)
 
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
@@ -50,6 +56,8 @@ class TasksController < ApplicationController
 
   def complete
     @task = Task.find(params[:id].to_i)
+    return render :status => :forbidden unless has_access?(@task)
+
     @task.is_complete = true
     @task.save
 
@@ -58,6 +66,8 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.destroy(params[:id].to_i)
+    return render :status => :forbidden unless has_access?(@task)
+
     redirect_to action: "index"
   end
 
@@ -72,5 +82,15 @@ class TasksController < ApplicationController
        # stop the request and redirect user to login page
        redirect_to controller: "sessions", action: "index"
      end
+   end
+
+   def has_access?(task)
+     if task.user_id != session[:user_id]
+       # user is attempting to show task not belong to them
+       # return HTTP forbidden
+       return false
+     end
+
+     return true
    end
 end
