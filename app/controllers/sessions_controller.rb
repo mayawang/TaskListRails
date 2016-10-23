@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     # do not delete user from database(that has logged out).
     # so that when this user login again, it will be mapped to the
     # same User object
+    redirect_to root_path
   end
 
   def create

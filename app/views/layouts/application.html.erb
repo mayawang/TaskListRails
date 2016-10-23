@@ -16,11 +16,16 @@
       <nav>
         <ul>
           <li><%= link_to( "Home", index_path ) %></li>
-          <%# <li><%= link_to( "Articles", show_path )%>
-          <!-- <li><%= link_to( "New Post", new_path ) %></li> -->
+          <% if session[:user_id] %>
+            <li>
+              <%= button_to "Log out", sessions_destroy_path, method: :delete %>
+            </li>
+          <% end %>
+
         </ul>
       </nav>
     </header>
+
 
     <%= yield %>
 
