@@ -13,6 +13,7 @@ class TasksController < ApplicationController
     puts "what is complete? #{params[:task][:is_complete]}"
 
     @task.save
+    # puts @task.valid?
 
     redirect_to action: "index"
     # @path = "update"
