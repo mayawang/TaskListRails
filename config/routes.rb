@@ -26,4 +26,9 @@ Rails.application.routes.draw do
   delete 'tasks/:id' => 'tasks#destroy', as: 'delete'
 
 
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/login" => "sessions#index"
+
+  delete "/logout" => "sessions#destroy", as: "sessions_destroy"
+
 end

@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+# for oAuth github Authentication
+gem "omniauth"
+gem "omniauth-github"
+gem "binding_of_caller"
+
+# its awesome!
+gem 'awesome_print'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -36,7 +43,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', group: [:development, :test]
+  gem 'sqlite3'
+  gem 'dotenv-rails'
+  gem 'better_errors'
 end
 
 
